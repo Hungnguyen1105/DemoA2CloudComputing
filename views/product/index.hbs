@@ -235,8 +235,11 @@
     </ul>
     <i class="uil uil-search search-icon" id="searchIcon"></i>
     <div class="search-box">
-      <i class="uil uil-search search-icon"></i>
-      <input type="text" placeholder="Search here..." />
+      
+      <form action="/product/search" method="post">
+      <input type="text" name="name">
+      <input type="submit" value="Search">
+      </form>
     </div>
   </nav>
   <div class="container-xl">

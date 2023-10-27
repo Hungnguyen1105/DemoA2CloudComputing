@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
       colors: colors
     });
 })
-
 router.get('/detail/:id', async (req, res) => {
     var id = req.params.id;
     // SELECT * FROM student WHERE id = 'id'
@@ -62,8 +61,8 @@ router.get('/detail/:id', async (req, res) => {
  })
  router.post('/search', async(req,res)=>{
     var keyword = req.body.name;
-    var products = await ProductModel.find({Name: new RegExp(keyword,"i")});
-    res.render('product/index', {products:products})
+    var bearbricks = await BearbrickModel.find({Name: new RegExp(keyword,"i")});
+    res.render('product/index', {bearbricks:bearbricks})
  })
 
 
