@@ -6,13 +6,10 @@ const GokuModel = require('../models/GokuModel');
 const ColorModel = require('../models/ColorModel');
 
 router.get('/', async (req, res) => {
-   // SQL : SELECT * FROM student
    var bearbricks = await BearbrickModel.find();
    var gokus = await GokuModel.find();
    var colors = await ColorModel.find();
    console.log(bearbricks);
-   //res.send(students);
-   // render ra file view : views/student/index.hbs và gửi kèm data thông qua biến 'students'
    res.render('product/index', { 
       bearbricks: bearbricks,
       gokus: gokus,
