@@ -14,7 +14,8 @@ var ProductSchema = mongoose.Schema(
             required: true
         },
         Image: String,
-        quantity: Number
+        quantity: Number,
+        color:String
     }
 )
 var ProductModel = mongoose.model('product', ProductSchema, 'product');

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const BearbrickModel = require('../models/BearbrickModel');
+const ColorModel = require('../models/ColorModel');
 
 router.get('/', async(req,res) =>{
     var bearbricks = await BearbrickModel.find();
@@ -21,8 +22,9 @@ router.get('/detail/:id', async (req, res) => {
     res.redirect('/bearbrick');
  })
  
- router.get('/add', (req, res) => {
-    res.render('bearbrick/add');
+ router.get('/add', async (req, res) => {
+   var color = await ColorModel.find();
+    res.render('bearbrick/add', {color : color});
  })
  
  router.post('/add', async (req, res) => {
@@ -31,6 +33,19 @@ router.get('/detail/:id', async (req, res) => {
     console.log('Add Product !');
     res.redirect('/bearbrick');
  })
+
+  
+ router.get('/color',  (req, res) => {
+
+   res.render('bearbrick/add');
+})
+
+router.post('/color', async (req, res) => {
+   var bearbrick = req.body;
+   await BearbrickModel.create(bearbrick);
+   console.log('Add Product !');
+   res.redirect('/bearbrick/add');
+})
  
  router.get('/edit/:id', async (req, res) => {
     var id = req.params.id;

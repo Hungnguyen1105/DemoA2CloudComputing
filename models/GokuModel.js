@@ -14,7 +14,8 @@ var GokuSchema = new mongoose.Schema(
             required: true
         },
         Image: String,
-        quantity: Number
+        quantity: Number,
+        color:String
     }
 )
 var GokuModel = mongoose.model('goku', GokuSchema, 'goku');

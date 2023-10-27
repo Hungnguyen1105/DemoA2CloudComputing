@@ -14,7 +14,8 @@ var BearbrickSchema = new mongoose.Schema({
         required: true  // Sửa 'require' thành 'required'
     },
     Image: String,
-    quantity: Number
+    quantity: Number,
+    color:String
 });
 
 var BearbrickModel = mongoose.model('bearbrick', BearbrickSchema, 'bearbrick');

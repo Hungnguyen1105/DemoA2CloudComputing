@@ -3,17 +3,20 @@ var router = express.Router();
 const ProductModel = require('../models/ProductModel');
 const BearbrickModel = require('../models/BearbrickModel');
 const GokuModel = require('../models/GokuModel');
+const ColorModel = require('../models/ColorModel');
 
 router.get('/', async (req, res) => {
    // SQL : SELECT * FROM student
    var bearbricks = await BearbrickModel.find();
    var gokus = await GokuModel.find();
+   var colors = await ColorModel.find();
    console.log(bearbricks);
    //res.send(students);
    // render ra file view : views/student/index.hbs và gửi kèm data thông qua biến 'students'
    res.render('product/index', { 
       bearbricks: bearbricks,
       gokus: gokus,
+      colors: colors
     });
 })
 
@@ -28,6 +31,7 @@ router.get('/detail/:id', async (req, res) => {
     var id = req.params.id;
     await BearbrickModel.findByIdAndDelete(id);
     await GokuModel.findByIdAndDelete(id);
+    await ColorModel.findByIdAndDelete(id);
     console.log('Delete product succeed');
     res.redirect('/product');
  })

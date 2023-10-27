@@ -37,6 +37,14 @@
       <label for="quanity" class="text-primary">Quanity</label>
       <input class="form-control" type="number" name="quantity" id="" required>
    </div>
+   <div class="form-group mt-3">
+    <label for="color">Select Color:</label>
+    <select class="form-control" id="color" name="color">
+        {{#each colors}}
+            <option value="{{this.color}}">{{this.color}}</option>
+        {{/each}}
+    </select>
+</div>
    <div class="form-group mt-3 mb-3 text-center">
       <input class="btn btn-primary" type="submit" value="Add">
       <input class="btn btn-success" type="reset" value="Clear">

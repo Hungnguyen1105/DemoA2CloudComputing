@@ -60,6 +60,7 @@
               <th>Price</th>
               <th>Image</th>
               <th>Quantity</th>
+              <th>Color</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -75,6 +76,7 @@
                   <img src="{{ Image }}" width="150" height="150">
                 </a>
               </td>
+              <td>{{ color }}</td>
               <td>{{ quantity }}</td>
               <td>
                 <a href="/goku/edit/{{ _id }}" class="settings" title="Settings" data-toggle="tooltip"><i
